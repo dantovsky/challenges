@@ -1,0 +1,31 @@
+Encontrar a maior sequência de zeros em um número binário, entre os números "1".
+
+Codility binary gap solution using regex
+https://codereview.stackexchange.com/questions/136739/codility-binary-gap-solution-using-regex
+(?!1)(0+)(?=1) 
+
+How do I convert an integer to binary in JavaScript?
+https://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
+
+JavaScript Number toString() Method
+https://www.w3schools.com/jsref/jsref_tostring_number.asp
+
+Creating a regular expression
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+
+SOLUTIONS
+
+Retorna array com as sequência de zeros
+(1127).toString(2).match(/(?!1)(0+)(?=1)/g)
+» (3) ["00", "00", "0"]
+
+reverse sorted
+(1227).toString(2).match(/(?!1)(0+)(?=1)/g).sort()
+» (3) ["0", "00", "00"]
+
+Retornar a marior quantidade de zeros
+const num = 1227
+const arr = num.toString(2).match(/(?!1)(0+)(?=1)/g).sort()
+const zeros = arr[arr.length - 1]
+

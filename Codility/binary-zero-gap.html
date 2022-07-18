@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Zero Gap</title>
+</head>
+
+<body>
+    <script>
+        const binaryZeroGap = (num) => {
+            const arr = num.toString(2).match(/(?!1)(0+)(?=1)/g).sort()
+            const zeros = arr[arr.length - 1]
+            return zeros
+        }
+        console.log('1227', ' => ', (1227).toString(2), ' => ', binaryZeroGap(1227))
+        console.log('9', ' => ', (9).toString(2), ' => ', binaryZeroGap(9))
+        console.log('524', ' => ', (524).toString(2), ' => ', binaryZeroGap(524))
+        console.log('3427', ' => ', (3427).toString(2), ' => ', binaryZeroGap(3427))
+        console.log('522', ' => ', (522).toString(2), ' => ', binaryZeroGap(522))
+    </script>
+</body>
+
+</html>
